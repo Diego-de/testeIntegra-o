@@ -48,8 +48,8 @@ public class Ingresso {
         }
     }
 
-    public String pegarPulseira(Cliente idade,Cliente compra){
-        if (verificarCompra(compra) == true && verIdade(idade) =="É de maior"){
+    public String pegarPulseira(Cliente cliente){
+        if (verificarCompra(cliente) == true && verIdade(cliente) =="É de maior"){
             this.corPulseira = "Pulseira Verde";
             return "Pulseira Verde";
         }else{

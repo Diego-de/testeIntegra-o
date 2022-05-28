@@ -14,37 +14,34 @@ public class TestIngressos {
 
     @BeforeEach
     public void setUp(){
-        //ingressos = Mockito.mock(Ingresso.class);
         ingressos =new Ingresso();
     }
 
 
     @Test
     public void VerificarSeoClienteVaiComprarOingresso(){
+
         Cliente cliente = new Cliente(18,true);
         ingressos.verificarCompra(cliente);
        Assertions.assertEquals(true,ingressos.getIngresso());
+
     }
 
     @Test
     public void VerificarSeAidadeDoClienteEmaiorQue18(){
+
         Cliente cliente = new Cliente(16,true);
         ingressos.verIdade(cliente);
-
         Assertions.assertEquals("É de menor",ingressos.getMaiorIdade());
+
     }
 
     @Test
     public void VerificarAcorDaPulseira(){
-        Cliente compra = new Cliente(18,true);
-        Cliente idade = new Cliente(18,true);
+        Cliente cliente = new Cliente(18,true);
+       // Cliente idade = new Cliente(18,true);
 
-//        Cliente compra = Mockito.mock(Cliente.class);
-//        Cliente idade = Mockito.mock(Cliente.class);
-//        when(idade.getIdade()).thenReturn(19);
-//        when(compra.getCompra()).thenReturn(false);
-
-        ingressos.pegarPulseira(idade,compra);
+        ingressos.pegarPulseira(cliente);
 
         Assertions.assertEquals("Pulseira Verde",ingressos.getCorPulseira());
     }
